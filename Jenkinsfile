@@ -9,4 +9,14 @@ pipeline {
             }
         }
     }
+        post {
+        always {
+          emailext attachLog: true, body: '''Hi,
+
+          Please Ignore this mail.
+
+         Regards,
+         Jenkins''', subject: 'Sample SCM Pipeline Run', to: 'shabhareesh456@gmail.com'
+        }
+    }
 }
